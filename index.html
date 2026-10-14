@@ -1,467 +1,245 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aldana Antoni | @poetayeditora</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldana Antoni | @poetayeditora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-ink: #2b2b2a;
+            --color-paper: #faf8f5;
+            --color-cement: #e6e4df;
+            --color-cement-dark: #d5d3cd;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-ink);
+            /* Simulación de fondo cemento alisado con un degradado sutil */
+            background: linear-gradient(135deg, var(--color-cement) 0%, var(--color-paper) 50%, var(--color-cement) 100%);
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Alegreya', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
 
-  <!-- Google Fonts: Alegreya (Headings) & Alegreya Sans (Body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-   href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
-   rel="stylesheet"
-  />
+        .text-body {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-  <script>
-   tailwind.config = {
-    theme: {
-     extend: {
-      colors: {
-       base: "#f2efea", // Fondo crema
-       ink: "#000000", // Texto negro
-       accent: "#d00000", // Acentos y botones rojos
-      },
-      fontFamily: {
-       serif: ['"Alegreya"', "serif"],
-       sans: ['"Alegreya Sans"', "sans-serif"],
-      },
-     },
-    },
-   };
-  </script>
+        /* Utilidad para el subrayado editorial */
+        .editorial-underline {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
 
-  <style>
-   body {
-    background-color: #f2efea;
-    color: #000000;
-   }
+        /* Estilo para las tarjetas simulando papel viejo/textura */
+        .card-paper {
+            background-color: var(--color-paper);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-cement-dark);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-300 selection:text-black">
 
-   /* Utilidad para el blend de imágenes con el fondo crema */
-   .img-blend {
-    mix-blend-mode: multiply;
-   }
+    <header class="fixed w-full top-0 bg-[#e6e4df]/90 backdrop-blur-md border-b border-stone-300 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-heading text-2xl tracking-wide text-stone-800">
+                Aldana<span class="italic font-light">Antoni</span>.
+            </a>
+            
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
+                <a href="#hero" class="hover:text-stone-500 transition-colors">Inicio</a>
+                <a href="#sello" class="hover:text-stone-500 transition-colors">Sello Editorial</a>
+                <a href="#cursos" class="hover:text-stone-500 transition-colors">Cursos</a>
+                <a href="#servicios" class="hover:text-stone-500 transition-colors">Servicios</a>
+            </nav>
 
-   /* Subrayado editorial elegante para enlaces */
-   .editorial-underline {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 6px;
-    transition: all 0.3s ease;
-   }
+            <!-- Botón menú móvil (hamburguesa) -->
+            <button class="md:hidden block text-stone-800 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Menú Móvil -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-[#e6e4df] border-b border-stone-300 px-6 py-4 space-y-4 text-center text-sm tracking-widest uppercase">
+            <a href="#hero" class="block hover:text-stone-500 transition-colors">Inicio</a>
+            <a href="#sello" class="block hover:text-stone-500 transition-colors">Sello Editorial</a>
+            <a href="#cursos" class="block hover:text-stone-500 transition-colors">Cursos</a>
+            <a href="#servicios" class="block hover:text-stone-500 transition-colors">Servicios</a>
+        </nav>
+    </header>
 
-   .editorial-underline:hover {
-    color: #d00000;
-    text-decoration-color: #d00000;
-   }
-  </style>
- </head>
- <body
-  class="font-sans antialiased selection:bg-accent selection:text-base flex flex-col min-h-screen"
- >
-  <header
-   class="fixed w-full top-0 bg-base/90 backdrop-blur-sm border-b border-ink/10 z-50"
-  >
-   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="flex flex-col">
-     <a
-      href="#"
-      class="font-serif text-2xl md:text-3xl font-medium tracking-tight text-ink"
-     >
-      Aldana Antoni
-     </a>
-     <span
-      class="font-sans text-xs uppercase tracking-[0.15em] text-ink/60 mt-1"
-      >@poetayeditora</span
-     >
-    </div>
+    <main class="pt-24">
+        <section id="hero" class="min-h-[85vh] flex items-center justify-center py-16 px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 space-y-6">
+                    <p class="uppercase tracking-[0.2em] text-sm text-stone-600 font-medium">@poetayeditora</p>
+                    <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-stone-900 leading-tight">
+                        Poesía,<br>
+                        <span class="italic text-stone-700">edición &</span><br>
+                        diseño.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-stone-700 max-w-lg mt-6 font-light">
+                        Hago libros divinos. Especializada en diseño editorial, publicaciones independientes y la materialidad del libro.
+                    </p>
+                    <div class="pt-8">
+                        <a href="#contacto" class="inline-block border border-stone-800 px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-stone-800 hover:text-white transition-all duration-300">
+                            Trabajemos juntos
+                        </a>
+                    </div>
+                </div>
+                <!-- Placeholder para imagen principal -->
+                <div class="order-1 md:order-2 flex justify-center relative">
+                    <div class="absolute inset-0 border border-stone-400 translate-x-4 translate-y-4 z-0"></div>
+                    <img src="https://placehold.co/500x650/d5d3cd/2b2b2a?text=Textura+Risograph+o+Retrato" alt="Retrato o textura editorial" class="relative z-10 w-full max-w-md object-cover shadow-xl grayscale contrast-125">
+                </div>
+            </div>
+        </section>
 
-    <nav
-     class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium text-ink"
-    >
-     <a href="#hero" class="hover:text-accent transition-colors">Inicio</a>
-     <a href="#sello" class="hover:text-accent transition-colors">Sello</a>
-     <a href="#cursos" class="hover:text-accent transition-colors"
-      >Laboratorio</a
-     >
-     <a href="#servicios" class="hover:text-accent transition-colors"
-      >Servicios</a
-     >
-    </nav>
+        <section id="sello" class="py-24 px-6 bg-stone-900 text-stone-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <!-- Placeholder Ilustración Botánica -->
+                    <div class="relative">
+                        <img src="https://placehold.co/600x600/1c1c1a/e6e4df?text=Ilustraci%C3%B3n+Bot%C3%A1nica" alt="Ilustración botánica" class="w-full h-auto object-cover opacity-80 mix-blend-luminosity">
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-[#faf8f5]">
+                            Sello Editorial:<br>
+                            <span class="italic text-stone-400">Libros Divinos</span>
+                        </h2>
+                        <div class="w-16 h-[1px] bg-stone-500 my-8"></div>
+                        <p class="text-lg text-stone-300 font-light leading-relaxed">
+                            Una cuidada selección de obras transformadoras, simbólicas y poéticas que exploran al libro como un objeto de poder. Cada título es una experimentación con la materialidad que posibilita el encuentro íntimo con el lector.
+                        </p>
+                        <p class="text-lg text-stone-300 font-light leading-relaxed">
+                            Buscamos generar una experiencia estética, táctil y accesible, reivindicando el valor del texto desde su soporte, su composición gráfica y una curaduría minuciosa.
+                        </p>
+                        <a href="#" class="inline-block mt-4 editorial-underline text-[#faf8f5] hover:text-stone-400 transition-colors uppercase tracking-widest text-sm font-medium">
+                            Ver catálogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <button
-     class="md:hidden text-ink"
-     onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-    >
-     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path
-       stroke-linecap="round"
-       stroke-linejoin="round"
-       stroke-width="1.5"
-       d="M4 6h16M4 12h16M4 18h16"
-      ></path>
-     </svg>
-    </button>
-   </div>
+        <section id="cursos" class="py-24 px-6 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-4xl md:text-5xl text-stone-900 mb-4">Cursos y talleres</h2>
+                    <p class="text-stone-600 max-w-2xl mx-auto text-lg font-light">Transmisión de saberes sobre el oficio de hacer libros.</p>
+                </div>
 
-   <!-- Mobile menu -->
-   <nav
-    id="mobile-menu"
-    class="hidden bg-base border-b border-ink/10 px-6 py-4 flex flex-col space-y-4 text-center text-sm uppercase tracking-widest font-medium"
-   >
-    <a href="#hero" class="hover:text-accent">Inicio</a>
-    <a href="#sello" class="hover:text-accent">Sello</a>
-    <a href="#cursos" class="hover:text-accent">Laboratorio</a>
-    <a href="#servicios" class="hover:text-accent">Servicios</a>
-   </nav>
-  </header>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Curso 1 -->
+                    <div class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-sm font-medium uppercase tracking-widest text-stone-500 mb-4 border-b border-stone-300 pb-2">Online / En vivo</div>
+                        <h3 class="font-heading text-2xl mb-4 text-stone-900">Maquetación Editorial en InDesign</h3>
+                        <p class="text-stone-700 mb-6 flex-grow font-light">Aprende a dominar la retícula, estilos de párrafo y carácter para armar libros y revistas con acabado profesional. Desde el manuscrito hasta el PDF de imprenta.</p>
+                        <a href="#" class="editorial-underline text-stone-900 self-start font-medium hover:text-stone-600">Más información</a>
+                    </div>
 
-  <main class="flex-grow pt-28">
-   <section
-    id="hero"
-    class="relative min-h-[80vh] flex items-center px-6 py-12"
-   >
-    <div
-     class="max-w-6xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center"
-    >
-     <div class="lg:col-span-7 space-y-8 relative z-10">
-      <h1
-       class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-ink"
-      >
-       Poesía,<br />
-       <span class="italic text-ink/80">edición</span> y<br />
-       diseño.
-      </h1>
-      <p
-       class="font-sans text-xl md:text-2xl font-light text-ink/80 max-w-lg leading-relaxed"
-      >
-       Hago libros divinos. Especializada en diseño editorial, publicaciones
-       independientes y la materialidad del libro.
-      </p>
-      <div class="pt-4">
-       <a
-        href="#contacto"
-        class="inline-block bg-accent text-base px-8 py-3 text-sm uppercase tracking-[0.15em] font-medium border border-accent hover:bg-transparent hover:text-accent transition-all duration-300"
-       >
-        Trabajemos juntos
-       </a>
-      </div>
-     </div>
+                    <!-- Curso 2 Modificado -->
+                    <div class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-sm font-medium uppercase tracking-widest text-stone-500 mb-4 border-b border-stone-300 pb-2">Online</div>
+                        <h3 class="font-heading text-2xl mb-4 text-stone-900">Alquimia editorial - Laboratorio poético de publicaciones</h3>
+                        <p class="text-stone-700 mb-6 flex-grow font-light">Un espacio de experimentación para desarticular y reconocer los elementos que componen una publicación. Exploraremos cómo el texto, la tipografía y el soporte reaccionan entre sí para transmutar las ideas hasta materializar tu primera gran obra.</p>
+                        <a href="#" class="editorial-underline text-stone-900 self-start font-medium hover:text-stone-600">Inscripciones</a>
+                    </div>
 
-     <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-      <!-- Decoración simulando marca de registro editorial -->
-      <div
-       class="absolute -top-4 -right-4 w-8 h-8 border-t border-r border-ink/40"
-      ></div>
-      <div
-       class="absolute -bottom-4 -left-4 w-8 h-8 border-b border-l border-ink/40"
-      ></div>
+                    <!-- Curso 3 -->
+                    <div class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">
+                        <div class="text-sm font-medium uppercase tracking-widest text-stone-500 mb-4 border-b border-stone-300 pb-2">Asesoría</div>
+                        <h3 class="font-heading text-2xl mb-4 text-stone-900">Clínica de Obra Editorial</h3>
+                        <p class="text-stone-700 mb-6 flex-grow font-light">Acompañamiento personalizado para autores o editoriales independientes que buscan pulir la identidad visual y estructura de su catálogo.</p>
+                        <a href="#" class="editorial-underline text-stone-900 self-start font-medium hover:text-stone-600">Agendar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- Placeholder de imagen: Reemplazar el SRC con tu gráfica o foto -->
-      <img
-       src="https://placehold.co/500x650/e6e3dd/000000?text=Tu+Gr%C3%A1fica\n+o+Retrato"
-       alt="Gráfica editorial"
-       class="w-full max-w-md h-auto object-cover img-blend shadow-sm"
-      />
-     </div>
-    </div>
-   </section>
+        <section id="servicios" class="py-24 px-6 bg-stone-200/50 border-t border-stone-300">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="font-heading text-4xl md:text-5xl text-stone-900 mb-8">Servicios</h2>
+                        
+                        <ul class="space-y-8">
+                            <li class="flex items-start">
+                                <span class="font-heading text-2xl mr-4 text-stone-400 italic">01.</span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stone-900 mb-1">Desarrollo de proyectos editoriales</h4>
+                                    <p class="text-stone-700 font-light">Acompañamiento integral desde la concepción de la idea hasta el libro físico, definiendo su estructura, formato y materialidad.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-heading text-2xl mr-4 text-stone-400 italic">02.</span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stone-900 mb-1">Diseño y maquetación</h4>
+                                    <p class="text-stone-700 font-light">Diseño interior y de cubiertas, cuidando la jerarquía visual tipográfica y la legibilidad del texto.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-heading text-2xl mr-4 text-stone-400 italic">03.</span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stone-900 mb-1">Gestión y acompañamiento de proyectos editoriales</h4>
+                                    <p class="text-stone-700 font-light">Asistencia en la coordinación de tiempos, presupuestos, revisión de pruebas y diálogo con imprentas para asegurar la calidad final del objeto impreso.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-heading text-2xl mr-4 text-stone-400 italic">04.</span>
+                                <div>
+                                    <h4 class="font-heading text-xl text-stone-900 mb-1">Dirección de arte</h4>
+                                    <p class="text-stone-700 font-light">Conceptualización visual de colecciones, selección tipográfica, paleta de colores y dirección para ilustradores o fotógrafos.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Placeholder composiciones visuales -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://placehold.co/400x500/e6e4df/2b2b2a?text=Marginalia/Detalle" alt="Detalle editorial" class="w-full h-full object-cover">
+                        <img src="https://placehold.co/400x500/d5d3cd/2b2b2a?text=Textura/Gráfica" alt="Gráfica editorial" class="w-full h-full object-cover mt-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-   <section
-    id="sello"
-    class="py-24 px-6 bg-ink text-base border-t border-ink/20"
-   >
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-     <div class="order-2 md:order-1 relative p-4">
-      <!-- Placeholder Ilustración Botánica / Libro -->
-      <div class="bg-ink p-2 border border-base/20">
-       <img
-        src="https://placehold.co/600x750/1a1a1a/f2efea?text=Ilustraci%C3%B3n+o\n+Foto+del+Libro"
-        alt="Ilustración editorial"
-        class="w-full h-auto opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
-       />
-      </div>
-     </div>
+    <footer id="contacto" class="bg-stone-900 text-stone-400 py-12 px-6 text-center border-t border-stone-800">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <h2 class="font-heading text-3xl text-stone-100 mb-6 italic">Hablemos</h2>
+            <a href="mailto:hola@tudominio.com" class="text-xl hover:text-stone-100 transition-colors mb-8 inline-block border-b border-stone-600 pb-1 font-light">
+                hola@tudominio.com
+            </a>
+            
+            <div class="flex space-x-6 uppercase tracking-widest text-xs mb-12 font-medium">
+                <a href="#" class="hover:text-stone-100 transition-colors">Instagram</a>
+                <a href="#" class="hover:text-stone-100 transition-colors">Behance</a>
+                <a href="#" class="hover:text-stone-100 transition-colors">LinkedIn</a>
+            </div>
 
-     <div class="order-1 md:order-2 space-y-8">
-      <div>
-       <span
-        class="font-sans text-xs uppercase tracking-widest text-accent mb-2 block"
-        >Sello Editorial</span
-       >
-       <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-base">
-        Libros <span class="italic">Divinos</span>
-       </h2>
-      </div>
-
-      <div class="w-12 h-px bg-accent"></div>
-
-      <p class="font-sans text-lg font-light leading-relaxed text-base/80">
-       Una selección de obras transformadoras, simbólicas y poéticas, religiosas
-       y en torno al libro como objeto transformador. Cada obra experimenta la
-       materialidad que posibilita su encuentro con el lector.
-      </p>
-      <p class="font-sans text-lg font-light leading-relaxed text-base/80">
-       Buscamos generar una experiencia estética, práctica y accesible,
-       reconociendo el valor del texto desde el soporte, su composición y
-       curado.
-      </p>
-
-      <div class="pt-4">
-       <a
-        href="#"
-        class="font-sans inline-block uppercase tracking-widest text-sm font-medium editorial-underline text-base hover:text-accent"
-       >
-        Ver catálogo
-       </a>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <section id="cursos" class="py-24 px-6 relative border-t border-ink/10">
-    <div class="max-w-4xl mx-auto">
-     <div class="mb-16 text-center md:text-left">
-      <h2 class="font-serif text-4xl md:text-5xl text-ink mb-4">
-       Cursos y talleres
-      </h2>
-     </div>
-
-     <div
-      class="bg-white/50 backdrop-blur-sm p-8 mb-6 md:p-12 border border-ink/20 relative group hover:border-accent/50 transition-colors"
-     >
-      <div
-       class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 group-hover:text-accent transition-all duration-300"
-      >
-       <!-- Ornamento SVG -->
-       <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-       </svg>
-      </div>
-
-      <div
-       class="font-sans text-xs uppercase tracking-widest text-ink/60 mb-6 flex items-center"
-      >
-       <span class="inline-block w-2 h-2 rounded-full bg-accent mr-3"></span>
-       Online
-      </div>
-
-      <h3 class="font-serif text-3xl md:text-4xl text-ink mb-4 leading-snug">
-       Alquimia editorial
-       <span class="block italic text-2xl md:text-3xl text-ink/80 mt-2"
-        >— Laboratorio poético de publicaciones</span
-       >
-      </h3>
-
-      <p
-       class="font-sans text-lg text-ink/80 font-light mb-8 max-w-2xl leading-relaxed"
-      >
-       Un laboratorio para reconocer la composición y los elementos que hacen a
-       toda publicación y cómo estos pueden reaccionar entre sí hasta llegar a
-       nuestra primer gran obra.
-      </p>
-
-      <a
-       href="#"
-       class="font-sans border border-ink px-6 py-2 text-sm uppercase tracking-widest font-medium hover:bg-accent hover:text-base hover:border-accent transition-colors inline-block"
-      >
-       Inscribirme
-      </a>
-     </div>
-     <div
-      class="bg-white/50 backdrop-blur-sm p-8 mb-6 md:p-12 border border-ink/20 relative group hover:border-accent/50 transition-colors"
-     >
-      <div
-       class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 group-hover:text-accent transition-all duration-300"
-      >
-       <!-- Ornamento SVG -->
-       <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-       </svg>
-      </div>
-
-      <div
-       class="font-sans text-xs uppercase tracking-widest text-ink/60 mb-6 flex items-center"
-      >
-       <span class="inline-block w-2 h-2 rounded-full bg-accent mr-3"></span>
-       Online
-      </div>
-
-      <h3 class="font-serif text-3xl md:text-4xl text-ink mb-4 leading-snug">
-       Alquimia editorial
-       <span class="block italic text-2xl md:text-3xl text-ink/80 mt-2"
-        >— Laboratorio poético de publicaciones</span
-       >
-      </h3>
-
-      <p
-       class="font-sans text-lg text-ink/80 font-light mb-8 max-w-2xl leading-relaxed"
-      >
-       Un laboratorio para reconocer la composición y los elementos que hacen a
-       toda publicación y cómo estos pueden reaccionar entre sí hasta llegar a
-       nuestra primer gran obra.
-      </p>
-
-      <a
-       href="#"
-       class="font-sans border border-ink px-6 py-2 text-sm uppercase tracking-widest font-medium hover:bg-accent hover:text-base hover:border-accent transition-colors inline-block"
-      >
-       Inscribirme
-      </a>
-     </div>
-     <div
-      class="bg-white/50 backdrop-blur-sm p-8 md:p-12 border border-ink/20 relative group hover:border-accent/50 transition-colors"
-     >
-      <div
-       class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 group-hover:text-accent transition-all duration-300"
-      >
-       <!-- Ornamento SVG -->
-       <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-       </svg>
-      </div>
-
-      <div
-       class="font-sans text-xs uppercase tracking-widest text-ink/60 mb-6 flex items-center"
-      >
-       <span class="inline-block w-2 h-2 rounded-full bg-accent mr-3"></span>
-       Online
-      </div>
-
-      <h3 class="font-serif text-3xl md:text-4xl text-ink mb-4 leading-snug">
-       Alquimia editorial
-       <span class="block italic text-2xl md:text-3xl text-ink/80 mt-2"
-        >— Laboratorio poético de publicaciones</span
-       >
-      </h3>
-
-      <p
-       class="font-sans text-lg text-ink/80 font-light mb-8 max-w-2xl leading-relaxed"
-      >
-       Un laboratorio para reconocer la composición y los elementos que hacen a
-       toda publicación y cómo estos pueden reaccionar entre sí hasta llegar a
-       nuestra primer gran obra.
-      </p>
-
-      <a
-       href="#"
-       class="font-sans border border-ink px-6 py-2 text-sm uppercase tracking-widest font-medium hover:bg-accent hover:text-base hover:border-accent transition-colors inline-block"
-      >
-       Inscribirme
-      </a>
-     </div>
-    </div>
-   </section>
-
-   <section id="servicios" class="py-24 px-6 bg-ink/5 border-t border-ink/10">
-    <div class="max-w-6xl mx-auto">
-     <div class="mb-16 text-center md:text-left">
-      <h2 class="font-serif text-4xl md:text-5xl text-ink">Servicios</h2>
-     </div>
-
-     <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
-      <div class="flex items-start group">
-       <span
-        class="font-serif text-4xl italic text-accent/50 mr-6 group-hover:text-accent transition-colors"
-        >01.</span
-       >
-       <div>
-        <h4 class="font-serif text-2xl text-ink mb-2">
-         Desarrollo de proyectos editoriales
-        </h4>
-        <p class="font-sans text-ink/70 font-light leading-relaxed">
-         Te acompaño desde la idea original hasta la estructura final,
-         definiendo el alma y formato de tu publicación.
-        </p>
-       </div>
-      </div>
-
-      <div class="flex items-start group">
-       <span
-        class="font-serif text-4xl italic text-accent/50 mr-6 group-hover:text-accent transition-colors"
-        >02.</span
-       >
-       <div>
-        <h4 class="font-serif text-2xl text-ink mb-2">Diseño y maquetación</h4>
-        <p class="font-sans text-ink/70 font-light leading-relaxed">
-         Diseño interior y exterior pensando en la mejor experiencia de lectura
-         y materialidad.
-        </p>
-       </div>
-      </div>
-
-      <div class="flex items-start group">
-       <span
-        class="font-serif text-4xl italic text-accent/50 mr-6 group-hover:text-accent transition-colors"
-        >03.</span
-       >
-       <div>
-        <h4 class="font-serif text-2xl text-ink mb-2">
-         Gestión y acompañamiento de proyectos editoriales
-        </h4>
-        <p class="font-sans text-ink/70 font-light leading-relaxed">
-         Asesoría integral durante todo el proceso de producción, presupuestos e
-         imprenta para materializar el libro.
-        </p>
-       </div>
-      </div>
-
-      <div class="flex items-start group">
-       <span
-        class="font-serif text-4xl italic text-accent/50 mr-6 group-hover:text-accent transition-colors"
-        >04.</span
-       >
-       <div>
-        <h4 class="font-serif text-2xl text-ink mb-2">Dirección de arte</h4>
-        <p class="font-sans text-ink/70 font-light leading-relaxed">
-         Curaduría visual, selección de papeles, acabados y dirección estética
-         para que la forma responda fielmente al contenido.
-        </p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-  </main>
-
-  <footer
-   id="contacto"
-   class="bg-base border-t border-ink/20 py-16 px-6 text-center"
-  >
-   <div class="max-w-3xl mx-auto flex flex-col items-center">
-    <h2 class="font-serif text-3xl md:text-4xl text-ink mb-6">
-     ¿Comenzamos un proyecto?
-    </h2>
-
-    <a
-     href="mailto:hola@aldanaantoni.com"
-     class="font-serif italic text-2xl md:text-3xl text-ink/80 hover:text-accent transition-colors mb-12 block"
-    >
-     hola@aldanaantoni.com
-    </a>
-
-    <div
-     class="flex space-x-8 font-sans uppercase tracking-[0.2em] text-xs font-medium text-ink/60 mb-12"
-    >
-     <a href="#" class="hover:text-accent transition-colors">Instagram</a>
-     <a href="#" class="hover:text-accent transition-colors">Behance</a>
-     <a href="#" class="hover:text-accent transition-colors">LinkedIn</a>
-    </div>
-
-    <div class="text-ink/50 text-xs font-sans tracking-wide">
-     <p>
-      &copy; <span id="year"></span> Aldana Antoni. Todos los derechos
-      reservados.
-     </p>
-     <p class="mt-2">Diseño editorial web | @poetayeditora</p>
-    </div>
-   </div>
-   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-   </script>
-  </footer>
- </body>
+            <p class="text-sm text-stone-500 font-light">
+                &copy; <span id="year"></span> Aldana Antoni. Todos los derechos reservados.<br>
+                <span class="italic font-heading text-base tracking-wide">Tipografías: Alegreya & Montserrat.</span>
+            </p>
+        </div>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
 </html>

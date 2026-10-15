@@ -73,3 +73,8 @@ h6,
  letter-spacing: 3rem;
  text-decoration: line-through;
 }
+
+h1 {
+ direction: rtl;
+ unicode-bidi: bidi-override;
+}

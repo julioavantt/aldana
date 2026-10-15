@@ -11,65 +11,12 @@
    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
    rel="stylesheet"
   />
-  <link rel="shortcut icon" href="morita.png" type="image/x-icon" />
-
-  <style>
-   :root {
-    --color-ink: #2b2b2a;
-    --color-paper: #faf8f5;
-    --color-cement: #e6e4df;
-    --color-cement-dark: #d5d3cd;
-   }
-
-   iframe {
-    transform: rotate(45deg);
-   }
-   body {
-    font-family: "Montserrat", sans-serif;
-    color: var(--color-ink);
-    /* Simulación de fondo cemento alisado con un degradado sutil */
-    background: linear-gradient(
-     135deg,
-     var(--color-cement) 0%,
-     var(--color-paper) 50%,
-     var(--color-cement) 100%
-    );
-    background-attachment: fixed;
-    line-height: 1.6;
-   }
-
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6,
-   .font-heading {
-    font-family: "Alegreya", serif;
-    font-weight: 500;
-    line-height: 1.2;
-   }
-
-   .text-body {
-    font-family: "Montserrat", sans-serif;
-   }
-
-   /* Utilidad para el subrayado editorial */
-   .editorial-underline {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-   }
-
-   /* Estilo para las tarjetas simulando papel viejo/textura */
-   .card-paper {
-    background-color: var(--color-paper);
-    box-shadow:
-     0 4px 6px rgba(0, 0, 0, 0.02),
-     0 1px 3px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-cement-dark);
-   }
-  </style>
+  <link
+   rel="shortcut icon"
+   href="./assets/img/morita.png"
+   type="image/x-icon"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
  </head>
  <body class="antialiased selection:bg-stone-300 selection:text-black">
   <header
@@ -79,8 +26,6 @@
     <a href="#" class="font-heading text-2xl tracking-wide text-stone-800">
      Aldana<span class="italic font-light">Antoni</span>.
     </a>
-
-    <!-- Menú de escritorio -->
     <nav class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
      <a href="#hero" class="hover:text-stone-500 transition-colors">Inicio</a>
      <a href="#sello" class="hover:text-stone-500 transition-colors"
@@ -91,8 +36,6 @@
       >Servicios</a
      >
     </nav>
-
-    <!-- Botón menú móvil (hamburguesa) -->
     <button
      class="md:hidden block text-stone-800 focus:outline-none"
      onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
@@ -107,8 +50,6 @@
      </svg>
     </button>
    </div>
-
-   <!-- Menú Móvil -->
    <nav
     id="mobile-menu"
     class="hidden md:hidden bg-[#e6e4df] border-b border-stone-300 px-6 py-4 space-y-4 text-center text-sm tracking-widest uppercase"
@@ -127,7 +68,6 @@
     >
    </nav>
   </header>
-
   <main class="pt-24">
    <section
     id="hero"
@@ -166,23 +106,21 @@
       <div
        class="absolute inset-0 border border-stone-400 translate-x-4 translate-y-4 z-0"
       ></div>
-      <img src="diva.gif" alt="" />
+      <img src="./assets/img/diva.gif" alt="" />
       <!--img src="https://placehold.co/500x650/d5d3cd/2b2b2a?text=Textura+Risograph+o+Retrato" alt="Retrato o textura editorial" class="relative z-10 w-full max-w-md object-cover shadow-xl grayscale contrast-125"-->
      </div>
     </div>
    </section>
-
    <section id="sello" class="py-24 px-6 bg-stone-900 text-stone-100">
     <div class="max-w-6xl mx-auto">
      <div class="grid md:grid-cols-2 gap-16 items-center">
-      <!-- Placeholder Ilustración Botánica -->
       <div class="relative">
        <!--img
         src="https://placehold.co/600x600/1c1c1a/e6e4df?text=Ilustraci%C3%B3n+Bot%C3%A1nica"
         alt="Ilustración botánica"
         class="w-full h-auto object-cover opacity-80 mix-blend-luminosity"
        /-->
-       <img src="2.gif" alt="" />
+       <img src="./assets/img/2.gif" alt="" />
       </div>
       <div class="space-y-6">
        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-[#faf8f5]">
@@ -211,7 +149,10 @@
      </div>
     </div>
    </section>
-
+   <img
+    class="wallpaper"
+    src="https://m.media-amazon.com/images/M/MV5BMjI4MjI4MzAzNF5BMl5BanBnXkFtZTcwNDg4OTAwNQ@@._V1_FMjpg_UX2048_.jpg"
+   />
    <section id="cursos" class="py-24 px-6 relative">
     <div class="max-w-6xl mx-auto">
      <div class="text-center mb-16">
@@ -224,7 +165,6 @@
      </div>
 
      <div class="grid md:grid-cols-3 gap-8">
-      <!-- Curso 1 -->
       <div
        class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300"
       >
@@ -247,8 +187,6 @@
         >Más información</a
        >
       </div>
-
-      <!-- Curso 2 Modificado -->
       <div
        class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300"
       >
@@ -272,8 +210,6 @@
         >Inscripciones</a
        >
       </div>
-
-      <!-- Curso 3 -->
       <div
        class="card-paper p-8 flex flex-col h-full hover:-translate-y-1 transition-transform duration-300"
       >
@@ -298,7 +234,6 @@
      </div>
     </div>
    </section>
-
    <section
     id="servicios"
     class="py-24 px-6 bg-stone-200/50 border-t border-stone-300"
@@ -309,7 +244,6 @@
        <h2 class="font-heading text-4xl md:text-5xl text-stone-900 mb-8">
         Servicios
        </h2>
-
        <ul class="space-y-8">
         <li class="flex items-start">
          <span class="font-heading text-2xl mr-4 text-stone-400 italic"
@@ -370,9 +304,6 @@
         </li>
        </ul>
       </div>
-
-      <!-- Placeholder composiciones visuales -->
-
       <div class="grid grid-cols-2 gap-4">
        <img
         src="https://placehold.co/400x500/e6e4df/2b2b2a?text=Marginalia/Detalle"
@@ -420,7 +351,6 @@
     >
      hola@tudominio.com
     </a>
-
     <div
      class="flex space-x-6 uppercase tracking-widest text-xs mb-12 font-medium"
     >
@@ -428,7 +358,6 @@
      <a href="#" class="hover:text-stone-100 transition-colors">Behance</a>
      <a href="#" class="hover:text-stone-100 transition-colors">LinkedIn</a>
     </div>
-
     <p class="text-sm text-stone-500 font-light">
      &copy; <span id="year"></span> Aldana Antoni. Todos los derechos
      reservados.<br />
@@ -437,9 +366,7 @@
      >
     </p>
    </div>
-   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-   </script>
   </footer>
+  <script src="./js/script.js"></script>
  </body>
 </html>
